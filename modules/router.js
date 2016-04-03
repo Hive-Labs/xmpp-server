@@ -1,4 +1,4 @@
-var xmpp = require('node-xmpp');
+var xmpp = require('node-xmpp-server');
 var ltx = require('ltx');
 var util = require('util');
 var EventEmitter = require('events').EventEmitter;

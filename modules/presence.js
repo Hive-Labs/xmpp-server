@@ -1,4 +1,4 @@
-var xmpp = require('node-xmpp');
+var xmpp = require('node-xmpp-core');
 var ltx = require('ltx');
 
 // http://xmpp.org/extensions/xep-0160.html

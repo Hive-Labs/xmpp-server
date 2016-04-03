@@ -1,4 +1,4 @@
-var xmpp = require('node-xmpp');
+var xmpp = require('node-xmpp-server');
 var message = require('../lib/message.js');
 var Message = message.Message;
 var ltx = require('ltx');

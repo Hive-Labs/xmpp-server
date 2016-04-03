@@ -1,4 +1,4 @@
-var xmpp = require('node-xmpp');
+var xmpp = require('node-xmpp-server');
 
 // XEP-0030: Service Discovery
 // http://xmpp.org/extensions/xep-0030.html

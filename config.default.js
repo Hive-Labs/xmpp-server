@@ -3,7 +3,7 @@ module.exports = {
     domain: 'localhost',
 
     // logging
-    logger: false,
+    logger: true,
 
     //tls: {
     //    keyPath: '/etc/xmpp-server/tls/localhost-key.pem',

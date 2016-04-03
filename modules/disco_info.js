@@ -1,4 +1,3 @@
-var xmpp = require('node-xmpp');
 var ltx = require('ltx');
 
 // XEP-0030: Service Discovery

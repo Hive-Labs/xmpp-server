@@ -1,9 +1,10 @@
-var xmpp = require('node-xmpp');
 var logger = require('winston');
 
 // http://xmpp.org/extensions/xep-0160.html
 function format_log(client, message) {
-    return [client.socket.remoteAddress, client.streamId, message].join(" "); 
+    if(client.socket)
+        return [client.socket.remoteAddress, client.streamId, message].join(" "); 
+    return " ";
 }
 
 function Logger() {

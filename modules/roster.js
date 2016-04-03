@@ -1,4 +1,4 @@
-var xmpp = require('node-xmpp');
+var xmpp = require('node-xmpp-server');
 var r = require('../lib/roster.js');
 var ltx = require('ltx');
 var RosterStorage = r.Roster;

@@ -30,7 +30,7 @@ config.load(function (args, opts) {
 
     var server = require('./lib/server.js');
     server.run(config, function() {
-        // Server ready!
+        console.log("Server is listening.");
     });
 });
 

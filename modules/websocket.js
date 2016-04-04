@@ -17,6 +17,7 @@ function WebsocketWrapper(ws) {
     this.remoteAddress = ws.remoteAddress;
     
     this.ws.on('message', function(message) {
+        console.log(message);
         if (message.type === 'utf8') {
             string = message.utf8Data
             if(string.match(/<stream:stream .*\/>/)) {
@@ -53,6 +54,10 @@ exports.configure = function(server, config) {
     if(config) {
         config.port = typeof(config.port) != 'undefined' ? config.port : 5280;
         var http = HttpServer.createServer(function(request, response) {
+            response.setHeader('Access-Control-Allow-Origin', '*');
+            response.setHeader('Access-Control-Request-Method', '*');
+            response.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET');
+            response.setHeader('Access-Control-Allow-Headers', '*');
             response.writeHead(404);
             response.end();
         });
@@ -66,7 +71,7 @@ exports.configure = function(server, config) {
         });
 
         ws.on('request', function(request) {
-            var socket = new WebsocketWrapper(request.accept(null, request.origin));
+            var socket = new WebsocketWrapper(request.accept("xmpp", "*"));
             server.acceptConnection(socket); // Let's go!
         });
     }
